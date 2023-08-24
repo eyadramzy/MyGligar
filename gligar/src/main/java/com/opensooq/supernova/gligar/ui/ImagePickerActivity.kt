@@ -179,18 +179,7 @@ internal class ImagePickerActivity : AppCompatActivity(), LoadMoreListener.OnLoa
     }
 
     private fun checkStoragePermission() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                storagePermissionGranted()
-            } else {
-                requestPermission(
-                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
-                    STORAGE_PERMISSION_REQUEST_CODE
-                );
-            }
-        } else {
-            storagePermissionGranted()
-        }
+          storagePermissionGranted()
     }
 
     private fun checkPermission(permission: String): Boolean {
